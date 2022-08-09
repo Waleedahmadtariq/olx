@@ -1,0 +1,111 @@
+@media screen and (max-width: 576px) {
+    .first {
+      flex-direction: row;
+      font-size: 0.6rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo1 {
+      width: 2rem;
+      height: 0.5rem;
+      margin-bottom: 0.6rem;
+      padding: 0px;
+    }
+    .categ-items{
+      width: 89vw;
+      padding-left: 0px !important;
+    }
+    .card img {
+      padding: 0rem 1rem;
+    background-color: black;
+  
+    }
+    .badge{
+      width: 25%;
+  
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .navbar-brand {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    #mynavbar div {
+      margin-bottom: 1rem;
+    }
+    .second select,
+    .search form {
+      width: 80vw;
+    }
+    #login {
+      width: 3rem;
+      margin: auto;
+      order: 1;
+    }
+    #sell {
+      margin-top: 1rem !important;
+      margin: auto;
+      order: 2;
+    }
+    .logo2 {
+      display: none;
+    }
+  
+    .third-items{
+      display: none;
+    }
+    .badge{
+      left: 1.5rem;
+    top: 45%;
+    }
+    .get-app {
+      flex-direction: column;
+    }
+    .get-app .image {
+      width: 100%;
+      order: 2;
+    }
+  
+    .vl {
+      display: none;
+    }
+    .store {
+      order: 10 !important;
+      margin-top: 0.5rem;
+      margin-left: 0px;
+      justify-content: center;
+      align-items: center;
+    }
+    .app-links ul {
+      padding-left: 0px;
+      flex-direction: column;
+      order: 2;
+    }
+    .link-section {
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  
+    #fs {
+      justify-content: center;
+      align-items: center;
+    }
+    #pc,
+    #ts,
+    #au,
+    #ox,
+    #fs {
+      text-align: center;
+      width: 50%;
+    }
+    .link-section span {
+      font-size: 13px;
+    }
+    .link-section div:last-child {
+      margin: 0px auto;
+    }
+  
+  }
+  

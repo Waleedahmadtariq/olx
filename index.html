@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OLX-Buy and Sell For Free Anytime</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="css/resposive.css" />
+  <link rel="shortcut icon" href="data:image/png;base64,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" type="image/x-icon">
+</head>
+
+<body>
+  <header class="container-fluid">
+    <!-- sticky navbar start here -->
+    <div class="sticky-top" id="sticky-navbar">
+      <nav class="d-flex align-items-center bg-light first">
+        <div class="logo1">
+          <a href="#"><img src="data:image/png;base64,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" alt="" /></a>
+        </div>
+        <div class="navbar1">
+          <span><a href=""><i class="fa-solid fa-car rounded-circle car"></i>MOTORS</a></span>
+          <span>
+            <a href=""><i class="fa-solid fa-city rounded-circle city"></i>PROPERTY</a></span>
+        </div>
+      </nav>
+      <!-- second navbar start here -->
+      <nav class="navbar navbar-expand-lg navbar-light
+          second">
+        <button class="navbar-toggler bg-success text-light" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="mynavbar">
+          <div class="container"><img class="logo2" src="https://olx-website-project.web.app/images/olx-logo-vector-modified.png" alt=""></div>
+          <div class="container-fluid"> <select class="form-select select" aria-label="Default select
+                example">
+              <option selected disabled>Pakistan</option>
+              <option value="1" disabled>Choose Rigion</option>
+              <option value="Azad Kashmir"> Azad Kashmir</option>
+              <option value="Blochistan"> Blochistan</option>
+              <option value="Blochistan"> Khyber PakhtunKhawa</option>
+              <option value="Blochistan"> Islamabad Capital Territory</option>
+              <option value="Blochistan"> Northern Areas</option>
+              <option value="Blochistan"> Punjab</option>
+              <option value="Blochistan"> Sindh</option>
+            </select>
+          </div>
+          <div class="container-fluid search">
+            <form class="d-flex">
+              <input class="form-control" type="search" placeholder="Find  Cars, Mobile Phone and more..."
+                aria-label="Search">
+              <button class="btn btn-outline-success mb-0" type="submit"><i
+                  class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+          </div>
+          <div class="container-fluid " id="login"><a href="">Login</a></div>
+          <div class="container-fluid sell text-center d-flex
+              align-items-center " id="sell"><a class="text-center d-flex
+                align-items-center" href=""><i class="fa fa-plus mx-1"></i>SELL
+            </a></div>
+        </div>
+
+      </nav>
+
+      <!-- second navbar end here -->
+    </div>
+    <!-- sticky navbar end here -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+
+        <div class="third ">
+          <ul class="navbar-nav  me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                ALL CATEGORIES
+              </a>
+              <ul class="dropdown-menu pos" aria-labelledby="navbarDropdown">
+                <ul class="categ-items list-unstyled">
+                  <li class=""><a class="fw-bold" href="">Mobiles</a>
+                    <ul class="sub-categ-items list-unstyled">
+                      <li><a href="">Mobile Phones</a></li>
+                      <li><a href="">Accessories</a></li>
+                      <li><a href="">Tablets</a></li>
+                      <li><a href="">Smart Watches</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="fw-bold" href="">Electronics & Home Appliances</a>
+                    <ul class="sub-categ-items list-unstyled">
+                      <li><a href="">Computers & Accessories</a></li>
+                      <li><a href="">TV-Video & Audio</a></li>
+                      <li><a href="">Other Home Appliances</a></li>
+                      <li><a href="">AC & Coolers</a></li>
+                      <li><a href="">Cameras & Accessories</a></li>
+                      <li><a href="">Kitchen Appliances</a></li>
+                      <li><a href="">Games & Entertainment</a></li>
+                      <li><a href="">Fridges & Freezers </a></li>
+                    </ul>
+                  </li>
+                  <li><a class="fw-bold" href="">Sevices</a>
+                    <ul class="sub-categ-items list-unstyled">
+                      <li><a href="">Others Services</a></li>
+                      <li><a href="">Education & Classes</a></li>
+                      <li><a href="">Car Rental</a></li>
+                      <li><a href="">Maids & Domestic Help</a></li>
+                      <li><a href="">Cameras & Accessories</a></li>
+                      <li><a href="">Web Development</a></li>
+                      <li><a href="">Electronics & Computer Repair</a></li>
+                      <li><a href="">Home & Office Repair</a></li>
+                      <li><a href="">Drivers & Taxi</a></li>
+                      <li><a href="">Travel & Visa</a></li>
+                      <li><a href="">Event Sevices</a></li>
+                      <li><a href="">Farm & Fresh Food</a></li>
+                      <li><a href="">Health & Beauty</a></li>
+                      <li><a href="">Catering & Resturant</a></li>
+                      <li><a href="">Movers & Packers</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="fw-bold" href="">Furniture & Home Decore</a>
+                    <ul class="sub-categ-items list-unstyled">
+                      <li><a href="">Sofa & Chairs</a></li>
+                      <li><a href="">Beds & wardrobes</a></li>
+                      <li><a href="">Home Decopration</a></li>
+                      <li><a href="">Tables & Dinnin</a></li>
+                      <li><a href="">Office Furniture</a></li>
+                      <li><a href="">Garden & Outdoor</a></li>
+                      <li><a href="">Home & Office Repair</a></li>
+                      <li><a href="">Painting & Mirrors</a></li>
+                      <li><a href="">Curtains & Blinds</a></li>
+                      <li><a href="">Rugs & Carpets</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="fw-bold" href="">Vihicles</a>
+                    <ul class="sub-categ-items list-unstyled">
+                      <li><a href="">Cars</a></li>
+                      <li><a href="">Other Household Items</a></li>
+                      <li><a href="">Home Decopration</a></li>
+                      <li><a href="">Tables & Dinnin</a></li>
+                      <li><a href="">Office Furniture</a></li>
+                      <li><a href="">Garden & Outdoor</a></li>
+                      <li><a href="">Home & Office Repair</a></li>
+                      <li><a href="">Painting & Mirrors</a></li>
+                      <li><a href="">Curtains & Blinds</a></li>
+                      <li><a href="">Rugs & Carpets</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="fw-bold" href="">Bikes</a>
+                    <ul class="sub-categ-items list-unstyled">
+                      <li><a href="">Motocycles</a></li>
+                      <li><a href="">Bycycles</a></li>
+                      <li><a href="">Spare Parts</a></li>
+                      <li><a href="">Scooters</a></li>
+                      <li><a href=""></a>ATV & Quads</li>
+                    </ul>
+                  </li>
+                  <li><a class="fw-bold" href="">Jobs</a>
+                    <ul class="sub-categ-items list-unstyled">
+                      <li><a href="">Online</a></li>
+                      <li><a href="">Part Time</a></li>
+                      <li><a href="">Marketing</a></li>
+                      <li><a href="">Education</a></li>
+                      <li><a href="">Sales</a></li>
+                      <li><a href="">Domestic Staff</a></li>
+                      <li><a href="">IT & Networking</a></li>
+                      <li><a href="">Medical</a></li>
+                      <li><a href="">Accountant & Finance</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="fw-bold" href="">Fashion & Beauty</a>
+                    <ul class="sub-categ-items list-unstyled">
+                      <li><a href="">Clothes</a></li>
+                      <li><a href="">Watches</a></li>
+                      <li><a href="">Skin & Hair</a></li>
+                      <li><a href="">Jewellary</a></li>
+                      <li><a href="">Footwear</a></li>
+                      <li><a href="">Wedding</a></li>
+                      <li><a href="">Accessories</a></li>
+                      <li><a href="">Make Up</a></li>
+                      <li><a href="">Couture</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="fw-bold" href="">Propety for Sales</a>
+                    <ul class="sub-categ-items list-unstyled">
+                      <li><a href="">Houses</a></li>
+                      <li><a href="">Portions & Floors</a></li>
+                      <li><a href="">Apartments & Flates</a></li>
+                      <li><a href="">Rooms</a></li>
+                      <li><a href="">Land & Plots</a></li>
+                      <li><a href="">Guest Houses</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="fw-bold" href="">Books, Sports & Hobbies</a>
+                    <ul class="sub-categ-items list-unstyled">
+                      <li><a href="">Gym & Fitness</a></li>
+                      <li><a href="">Musical Instrument</a></li>
+                      <li><a href="">Sport Equipment</a></li>
+                      <li><a href="">Books & Magazines</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="fw-bold" href="">Animals</a>
+                    <ul class="sub-categ-items list-unstyled">
+                      <li><a href="">Birds</a></li>
+                      <li><a href="">Hens & Aseel</a></li>
+                      <li><a href="">Cats</a></li>
+                      <li><a href="">Dogs</a></li>
+                      <li><a href="">Livestock</a></li>
+                      <li><a href="">Horses</a></li>
+                      <li><a href="">Fish & Aquariums</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="fw-bold" href="">Kids</a>
+                    <ul class="sub-categ-items list-unstyled">
+                      <li><a href="">Toys</a></li>
+                      <li><a href="">Kids Accessories</a></li>
+                      <li><a href="">Kids Furniture</a></li>
+                      <li><a href="">Kids Bikes</a></li>
+                      <li><a href="">Swings & Slide</a></li>
+                      <li><a href="">Prames & Walkers</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </ul>
+            </li>
+
+            <li class="nav-item third-items">
+              <a class="nav-link " href="#">Mobile Phones</a>
+            </li>
+            <li class="nav-item third-items">
+              <a class="nav-link" href="#">Cars</a>
+            </li>
+            <li class="nav-item third-items">
+              <a class="nav-link" href="#">Motorcyles</a>
+            </li>
+            <li class="nav-item third-items">
+              <a class="nav-link" href="#">Houses</a>
+            </li>
+            <li class="nav-item third-items">
+              <a class="nav-link" href="#">TV-Video-audio</a>
+            </li>
+            <li class="nav-item third-items">
+              <a class="nav-link" href="#">Tablets</a>
+            </li>
+            <li class="nav-item third-items">
+              <a class="nav-link" href="#">Land & plots</a>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+    <header>
+      <!-- header end here -->
+      <!-----------------carosoul start here------------------->
+      <div id="carouselExampleSlidesOnly" class="carousel slide my-1" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://images.olx.com.pk/thumbnails/245178240-800x600.webp" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.olx.com.pk/thumbnails/245178240-800x600.webp" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.olx.com.pk/thumbnails/245178240-800x600.webp" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+      <!-----------------carosoul section end here------------------->
+      <!-----------------fresh recomendation section here------------------->
+      <div class="card-group mt-5 " id="fresh-recomendation-section">
+        <h6 class="fs-5">Fresh Recommendation</h6>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4
+            g-4 m-auto">
+          <div class="col">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/266337036-240x180.webp" class="card-img-top"
+                  alt="..."></a>
+              <span class="badge bg-warning text-dark  position-absolute  ">FEATURED</span>
+              <div class="card-body feature">
+                <p class="card-text">Wooden Cabinet For Living/Bedroom
+                </p>
+                <h5 class="card-title">RS <span>19,999</span></h5>
+                <p class="card-text "><small class="text-muted">DHA Phase 6,Lahore
+                 •<span> 1 minute ago</span></small>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col sp">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/220274767-240x180.webp" class="card-img-top" alt="..."></a>
+              <span class="badge bg-warning text-dark  position-absolute  ">FEATURED</span>
+              <div class="card-body feature">
+                <p class="card-text">Mavic air 3 Camera For Sale Drone Camera For Sale 
+                </p>
+                <h5 class="card-title">RS <span>5000</span></h5>
+                <p class="card-text "><small class="text-muted">Johar Town,
+                    Karachi •<span> 4 weeks ago</span></small></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/237665622-240x180.webp" class="card-img-top"
+                  alt="..."></a>
+              <span class="badge bg-warning text-dark  position-absolute  ">FEATURED</span>
+              <div class="card-body feature">
+                <p class="card-text">Second Floor Shop For Sale In Sitara Icon Tower
+                </p>
+                <h5 class="card-title">RS <span>15,626,360</span></h5>
+                <p class="card-text "><small class="text-muted">Faislabad,Punjab •<span>
+                      4 weeks ago</span></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/272568898-240x180.webp" class="card-img-top"
+                  alt="..."></a>
+              <span class="badge bg-warning text-dark  position-absolute  ">FEATURED</span>
+              <div class="card-body feature">
+                <p class="card-text">Poco M3 6/128
+                </p>
+                <h5 class="card-title">RS <span>18,000</span></h5>
+                <p class="card-text "><small class="text-muted">Faislabad,
+                    Punjab •<span> 1 minutes ago</span></small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col sp">
+            <div class="card">
+              <a class="stretched-link" href="">
+                <img src="https://images.olx.com.pk/thumbnails/265441493-240x180.webp" class="card-img-top" alt="..."></a>
+              <div class="card-body">
+                <p class="card-text">New Bed set with side tables / New Home...
+                </p>
+                <h5 class="card-title">RS <span>225,000</span></h5>
+                <p class="card-text "><small class="text-muted">Gold Plaza
+                    Gujrat •<span> 3 weeks
+                      ago</span></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <a class="stretched-link" href="">
+                <img src="https://images.olx.com.pk/thumbnails/266885847-240x180.webp" class="card-img-top" alt="..."></a>
+              <span class="badge bg-warning text-dark  position-absolute  ">FEATURED</span>
+
+              <div class="card-body feature">
+                <p class="card-text">Asus i7 4th Generation, 2k
+                 resolution, 8/128
+                </p>
+                <h5 class="card-title">RS <span> 44,500</span></h5>
+                <p class="card-text "><small class="text-muted">Bahria Town,
+                    Lahore•<span> 3 weeks ago</span></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col sp">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/271645151-240x180.webp" class="card-img-top"
+                  alt="..."></a>
+              <span class="badge bg-warning text-dark  position-absolute  ">FEATURED</span>
+
+              <div class="card-body feature">
+                <p class="card-text">Honda City 1.3 2013
+                  Furniture Sofa set Factory.
+                </p>
+                <h5 class="card-title ">RS <span>21,180,000</span></h5>
+                <p class="card-text "><small class="text-muted">Askari,
+                    Lahore•<span> 2 weeks
+                      ago</span></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col sp">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/239489715-240x180.webp" class="card-img-top"
+                  alt="..."></a>
+              <div class="card-body">
+                <p class="card-text">Used And New Exercise Cycles
+                  For Sale
+                </p>
+                <h5 class="card-title">RS <span>23,500</span></h5>
+                <p class="card-text "><small class="text-muted">Karimabad,
+                    Karachi •<span> 10 weeks ago</span></small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col sp">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/266129985-240x180.webp" class="card-img-top"
+                  alt="..."></a>
+              <div class="card-body">
+                <p class="card-text">6 Seater Shesham Dining
+                 Wood Top Of Glass
+                </p>
+                <h5 class="card-title">RS <span>55,000</span></h5>
+                <p class="card-text "><small class="text-muted">Scheme 33
+                   ,Karachi •<span> 3 weeks
+                      ago</span></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col sp">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/272678431-240x180.webp" class="card-img-top"
+                  alt="..."></a>
+              <div class="card-body">
+                <p class="card-text">White Rabbits With Red Eyes
+                  For Sale
+                  <br>
+                </p>
+                <h5 class="card-title">RS <span>500</span></h5>
+                <p class="card-text "><small class="text-muted">Gulistan,
+                  Dhaska   •<span> 8 weeks
+                      ago</span></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/268237178-240x180.webp" class="card-img-top"
+                  alt="..."></a>
+              <div class="card-body">
+                <p class="card-text">Rottweiler Male Pedigree
+                  dog for sale
+                </p>
+                <h5 class="card-title">RS <span>100,000</span></h5>
+                <p class="card-text "><small class="text-muted">Clifton
+                    , Karachi •<span> 13 weeks
+                      ago</span></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col sp">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/268896791-240x180.webp" class="card-img-top"
+                  alt="..."></a>
+              <span class="badge bg-warning text-dark  position-absolute  ">FEATURED</span>
+              <div class="card-body feature">
+                <p class="card-text">Readmi Watch 2 Lite
+                  Black Colour
+                </p>
+                <h5 class="card-title">RS <span>9,500</span></h5>
+                <p class="card-text "><small class="text-muted">Sadar
+                , Karachi •<span> 1 weeks
+                      ago</span></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col sp">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/270626266-240x180.webp" class="card-img-top"
+                  alt="..."></a>
+              <span class="badge bg-warning text-dark  position-absolute  ">FEATURED</span>
+              <div class="card-body feature">
+                <p class="card-text">Customized Gift Basket/
+                Customized Gift Boxes                 
+                </p>
+                <h5 class="card-title">RS <span> 3000</span></h5>
+                <p class="card-text "><small class="text-muted">Nazimabad
+                  , Karachi •<span> 19 weeks
+                      ago</span></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col sp">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/233455663-240x180.webp" class="card-img-top"
+                  alt="..."></a>
+              <span class="badge bg-warning text-dark  position-absolute  ">FEATURED</span>
+                 <br>
+              <div class="card-body feature">
+                <p class="card-text">Curtains And Blinds
+                </p>
+                <h5 class="card-title">RS <span>15,000</span></h5>
+                <p class="card-text "><small class="text-muted">DHA Phase 6,
+                    Lahore •<span> 2 weeks ago</span></small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col sp">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/263697495-240x180.webp" class="card-img-top"
+                  alt="..."></a>
+              <div class="card-body">
+                <p class="card-text">iphone 8 pta prove, in condition for sale
+                </p>
+                <h5 class="card-title">RS <span>30,500</span></h5>
+                <p class="card-text "><small class="text-muted">Shahdara,
+                    Lahore •<span> 20 minutes ago</span></small>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col sp">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/269789824-240x180.webp" class="card-img-top"
+                  alt="..."></a>
+              <span class="badge bg-warning text-dark  position-absolute  ">FEATURED</span>
+
+              <div class="card-body feature">
+                <p class="card-text">BNC Cables
+                </p>
+                <h5 class="card-title">RS <span>100</span></h5>
+                <p class="card-text "><small class="text-muted">Okara
+                    ,Punjab •<span> 2 weeks
+                      ago</span></small></p>
+              </div>
+            </div>
+          </div>
+          <div class="col sp">
+            <div class="card">
+              <a class="stretched-link" href=""> <img src="https://images.olx.com.pk/thumbnails/237315740-240x180.webp" class="card-img-top"
+                  alt="..."></a>
+              <div class="card-body">
+                <p class="card-text">Flat on 3rd Floor For Sale
+                In City Star Residencia
+                </p>
+                <h5 class="card-title">RS <span> 5,213,000</span></h5>
+                <p class="card-text "><small class="text-muted">Nespak,
+                    Lahore •<span> 2 weeks ago</span></small></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="loadmore w-100 d-flex justify-content-center"><button type="button"
+            class="btn py-2 px-2 fw-bold ">Load more</button></div>
+      </div>
+      <!-----------------fresh recomendation section end here------------------->
+      <!------------------ get app section start here ---------------->
+      <div class="get-app d-flex ">
+        <div class="image "><img width="100%" src="https://www.olx.com.pk/assets/olxMobileApp.f5579f77e849b600ad60857e46165516.webp" alt="">
+        </div>
+        <div class="vl "></div>
+        <div class="store ms-3 d-flex flex-column justify-content-center">
+          <div class="today ms-4 mb-2 fw-bold">GET YOUR APP TODAY</div>
+          <div class="app-links">
+            <ul class="d-flex ">
+              <li><a href="https://apps.apple.com/pk/app/olx-pakistan/id1551315538"><img
+                    src="https://www.olx.com.pk/assets/iconAppStoreEN_noinline.a731d99c8218d6faa0e83a6d038d08e8.svg" alt=""></a></li>
+              <li><a href="https://play.google.com/store/apps/details?id=com.olx.pk"><img
+                    src="https://www.olx.com.pk/assets/iconGooglePlayEN_noinline.9892833785b26dd5896b7c70b089f684.svg" alt=""></a></li>
+              <li><a href="https://appgallery.huawei.com/#/app/C104375435"><img
+                    src="https://www.olx.com.pk/assets/iconAppGallery_noinline.6092a9d739c77147c884f1f7ab3f1771.svg" alt=""></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!------------------ get app section end here ---------------->
+      <!------------------ footer section start here ---------------->
+      <footer>
+        <div class="link-section pt-3 pb-5 d-flex justify-content-between
+            align-content-center">
+          <div id="pc">
+            <span class="fw-bold">POPULAR CATEGORIES</span>
+            <ul>
+              <li><a href="">Cars</a></li>
+              <li><a href="">Plates for rent</a></li>
+              <li><a href="">Mobiles Phones</a></li>
+              <li><a href="">Jobs</a></li>
+            </ul>
+          </div>
+          <div id="ts">
+            <span class="fw-bold">TRENDING SEARCHES</span>
+            <ul>
+              <li><a href="">Bikes </a></li>
+              <li><a href="">Watches</a></li>
+              <li><a href="">Books</a></li>
+              <li><a href="">Dogs</a></li>
+            </ul>
+          </div>
+          <div id="au">
+            <span class="fw-bold">ABOUT US</span>
+            <ul>
+              <li><a href="">About EMPG</a></li>
+              <li><a href="">OLX Blog</a></li>
+              <li><a href="">Contact Us </a></li>
+              <li><a href="">OLX for Businesses</a></li>
+            </ul>
+          </div>
+          <div id="ox">
+            <span class="fw-bold">OLX</span>
+            <ul>
+              <li><a href="">Help</a></li>
+              <li><a href="">Sitemap</a></li>
+              <li><a href="">Terms of use</a></li>
+              <li><a href="">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div id="fs" class="d-flex flex-column align-items-center">
+            <span class="fw-bold">FOLLOW US</span>
+            <div class="social ">
+              <a href="https://www.facebook.com/olxpakistan" target="_blank"><img src="./facebook.svg" alt=""></a>
+              <a href=""><img src="./twitter.svg" alt=""></a>
+              <a href="https://twitter.com/OLX_Pakistan" target="_blank"><img src="./images/iconYoutube_noinline.c85bd6801ec83d6a3b498059550bef26.svg" alt=""></a>
+              <a href="https://www.instagram.com/accounts/login/?next=/olx.pakistan/" target="_blank"><img src="./instagram.svg" alt=""></a>
+            </div>
+            <div class="stores mt-5">
+              <a href="https://apps.apple.com/pk/app/olx-pakistan/id1551315538" target="_blank"><img
+                  src="https://www.olx.com.pk/assets/iconAppStoreEN_noinline.a731d99c8218d6faa0e83a6d038d08e8.svg" alt=""></a>
+                  <br>
+              <a href="https://play.google.com/store/apps/details?id=com.olx.pk" target="_blank"><img
+                  src="https://www.olx.com.pk/assets/iconGooglePlayEN_noinline.9892833785b26dd5896b7c70b089f684.svg" alt=""></a>
+                  <br>
+              <a href="https://appgallery.huawei.com/#/app/C104375435" target="_blank"><img
+                  src="https://www.olx.com.pk/assets/iconAppGallery_noinline.6092a9d739c77147c884f1f7ab3f1771.svg" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid copy-right text-light d-flex
+            justify-content-end p-2">
+          <p>Free Classifieds in Pakistan .<small>&copy;2006-2022 OLX</small></p>
+        </div>
+      </footer>
+      <!-- bootsrape links -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- font awesome link -->
+      <script src="https://kit.fontawesome.com/bbb36de1a4.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
